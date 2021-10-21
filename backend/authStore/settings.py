@@ -42,6 +42,17 @@ INSTALLED_APPS = [
     'authApp',
 ]
 
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME'    : timedelta(minutes=10),
+    'REFRESH_TOKEN_LIFETIME'   : timedelta(days=1),
+    'ROTATE_REFRESH_TOKENS'    : False,
+    'BLACKLIST_AFTER_ROTATION' : True,
+    'UPDATE_LAST_LOGIN'        : False,
+    'ALGORITHM'                : 'HS256',
+    'USER_ID_FIELD'            : 'id',
+    'USER_ID_CLAIM'            : 'user_id',
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -51,6 +62,17 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.AllowAny',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
+AUTH_USER_MODEL = 'authApp.User'
 
 ROOT_URLCONF = 'authStore.urls'
 
@@ -111,7 +133,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-es'
 
 TIME_ZONE = 'UTC'
 
@@ -134,22 +156,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #---- Token JWT ----
 
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.AllowAny',
-    ),
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
-}
 
-SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME'    : timedelta(minutes=10),
-    'REFRESH_TOKEN_LIFETIME'   : timedelta(days=1),
-    'ROTATE_REFRESH_TOKENS'    : False,
-    'BLACKLIST_AFTER_ROTATION' : True,
-    'UPDATE_LAST_LOGIN'        : False,
-    'ALGORITHM'                : 'HS256',
-    'USER_ID_FIELD'            : 'id',
-    'USER_ID_CLAIM'            : 'user_id',
-}
