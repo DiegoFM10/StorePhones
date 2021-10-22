@@ -1,0 +1,2 @@
+#from .productView import ProductDetailView,  ProductCreateView, ProductUpdateView, ProductDeleteView, TestView, ProductView
+from .productView import TestView, ProductView, ProductCreateView, ProductListCreateView, ProductRetrieveUpdateDestroy
