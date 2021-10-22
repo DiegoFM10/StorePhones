@@ -70,11 +70,11 @@ WSGI_APPLICATION = 'authStore.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE'   : 'django.db.backends.postgresql_psycopg2',
-        'NAME'     : 'der7dcipgd7o0b',
-        'HOST'     : 'ec2-3-228-134-188.compute-1.amazonaws.com',
+        'NAME'     : 'dd1u4fqh1u0di',
+        'HOST'     : 'ec2-54-209-187-69.compute-1.amazonaws.com',
         'PORT'     : '5432',
-        'PASSWORD' : '1cf839928e7aacfd551decf05928a1cbe193a8dbcb74ae88fb565a5b2ccf7914',
-        'USER'     : 'icymogmrjltvty'
+        'PASSWORD' : '69aecc79f146599cb6addc3da5c3ed2882628a4a65a9c82b24b230c0a4901414',
+        'USER'     : 'cmaqicowohgylk'
     }
 }
 
