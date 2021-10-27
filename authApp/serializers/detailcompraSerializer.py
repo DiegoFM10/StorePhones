@@ -12,8 +12,6 @@ class detaCompraSerializer(serializers.ModelSerializer):
 
         return{
             'id          ' : detaCompra.id,
-            'user        ' : detaCompra.user,   
-            'product     ' : detaCompra.product,
             'cantidad    ' : detaCompra.cantidad,
             'valor_total ' : detaCompra.valor_total          
         } 
